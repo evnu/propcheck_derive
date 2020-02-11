@@ -12,5 +12,6 @@ before_script:
   - mix do deps.get, deps.compile, compile --warnings-as-errors
 script:
   - mix test
+  - mix docception README.md
   - mix test extra_tests/derive_for_all_of_elixir_test.exs
   - mix credo --strict
