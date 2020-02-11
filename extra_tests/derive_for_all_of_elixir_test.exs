@@ -44,9 +44,11 @@ defmodule DeriveForAllOfElixir do
   use PropCheck.Derive, module: Collectable
   use PropCheck.Derive, module: CompileError
   use PropCheck.Derive, module: CondClauseError
-  use PropCheck.Derive, module: Config.Provider
-  use PropCheck.Derive, module: Config.Reader
-  use PropCheck.Derive, module: Config
+  if Code.ensure_compiled(Config) != {:error, :nofile} do
+    use PropCheck.Derive, module: Config.Provider
+    use PropCheck.Derive, module: Config.Reader
+    use PropCheck.Derive, module: Config
+  end
   use PropCheck.Derive, module: Date.Range
   use PropCheck.Derive, module: Date
   use PropCheck.Derive, module: DateTime
