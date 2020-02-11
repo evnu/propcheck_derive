@@ -22,7 +22,8 @@ defmodule PropCheck.Derive.MixProject do
     [
       {:propcheck, "~> 1.2"},
       {:docception, "~> 0.3", only: [:dev, :test]},
-      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
+      {:ex_doc, "~> 0.21", only: :dev},
     ]
   end
 end
