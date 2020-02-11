@@ -6,6 +6,9 @@ defmodule PropCheck.Derive.MixProject do
       app: :propcheck_derive,
       version: "0.1.0",
       elixir: "~> 1.7",
+      description: description(),
+      package: package(),
+      source_url: "https://github.com/evnu/propcheck_derive",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       docs: [
@@ -28,6 +31,18 @@ defmodule PropCheck.Derive.MixProject do
       {:docception, "~> 0.3", only: [:dev, :test]},
       {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.21", only: :dev},
+    ]
+  end
+
+  defp description do
+    "Derive PropCheck generators from types "
+  end
+
+  defp package do
+    [
+      licenses: ["GPL-3.0-only"],
+      links: %{"Github" => "https://github.com/evnu/propcheck_derive"},
+      maintainers: ["evnu"]
     ]
   end
 end
