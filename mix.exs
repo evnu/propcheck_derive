@@ -20,7 +20,8 @@ defmodule PropCheck.Derive.MixProject do
 
   defp deps do
     [
-      {:propcheck, "~> 1.2"}
+      {:propcheck, "~> 1.2"},
+      {:docception, "~> 0.3", only: [:dev, :test]}
     ]
   end
 end
