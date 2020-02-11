@@ -1,4 +1,23 @@
 defmodule PropCheck.Derive do
+  @moduledoc """
+  Derive PropCheck generators from `@type`.
+
+  This module exports a `use` macro to derive PropCheck generator from public
+  types. The macro currently offers three optional configuration arguments:
+
+  * `:module` to create generators for another module.
+  * `:include` to explicitly choose the types for which generators are to be created
+  * `:exclude` to disable creating generators for certain types
+
+  ## Example
+
+      iex> use PropCheck
+      iex> use PropCheck.Derive, module: String, include: [t: 0]
+      iex> {:ok, string} = produce(String.Generate.t())
+      iex> is_binary(string)
+      true
+
+  """
   @valid_keys [:include, :exclude, :module]
 
   defmacro __using__(args) do

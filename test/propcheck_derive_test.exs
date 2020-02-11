@@ -2,6 +2,8 @@ defmodule PropCheck.DeriveTest do
   use ExUnit.Case
   use PropCheck
 
+  doctest PropCheck.Derive
+
   alias SampleModule.Generate
 
   #
