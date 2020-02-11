@@ -4,7 +4,7 @@ defmodule PropCheck.Derive.MixProject do
   def project do
     [
       app: :propcheck_derive,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.7",
       description: description(),
       package: package(),
@@ -40,7 +40,7 @@ defmodule PropCheck.Derive.MixProject do
 
   defp package do
     [
-      licenses: ["GPL-3.0-only"],
+      licenses: ["GPL 3.0"],
       links: %{"Github" => "https://github.com/evnu/propcheck_derive"},
       maintainers: ["evnu"]
     ]
