@@ -1,7 +1,7 @@
 # PropCheck.Derive
 [![Hex](https://img.shields.io/hexpm/v/propcheck_derive.svg)](https://hex.pm/packages/propcheck_derive)
 [![Build Status](https://travis-ci.org/evnu/propcheck_derive.svg?branch=master)](https://travis-ci.org/evnu/propcheck_derive)
-![License](https://img.shields.io/hexpm/l/propcheck_derive.svg)
+[![License](https://img.shields.io/github/license/evnu/propcheck_derive)](https://opensource.org/licenses/GPL-3.0)
 
 Generating simple PropCheck generators from type definitions.
 
