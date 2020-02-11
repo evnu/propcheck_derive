@@ -14,12 +14,12 @@ defmodule PropCheck.Derive.Forest.Server.State do
     canonic = canonic_type(root)
 
     if state.expanded[canonic] do
-      raise ArgumentError, "Type #{inspect(canonic)} already added"
+      state
+    else
+      expanded = Map.put(state.expanded, canonic, root)
+      condensed = Map.put(state.condensed, canonic, condense(root))
+      %__MODULE__{state | expanded: expanded, condensed: condensed}
     end
-
-    expanded = Map.put(state.expanded, canonic, root)
-    condensed = Map.put(state.condensed, canonic, condense(root))
-    %__MODULE__{state | expanded: expanded, condensed: condensed}
   end
 
   defp canonic_type(node) do
