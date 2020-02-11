@@ -34,7 +34,11 @@ defmodule PropCheck.Derive.Forest do
             privatize(tree, viz)
 
           {:error, {:unsupported, inner}} ->
-            raise PropCheck.Derive.Type.TypeUnsupported, %{module: module, type: t, caused_by: inner}
+            raise PropCheck.Derive.Type.TypeUnsupported, %{
+              module: module,
+              type: t,
+              caused_by: inner
+            }
 
           {:error, {:type_unclear, inner, type_name, reason}} ->
             raise PropCheck.Derive.Type.TypeUnclear, %{
@@ -52,7 +56,9 @@ defmodule PropCheck.Derive.Forest do
   end
 
   defp privatize(t = %PropCheck.Derive.Type{}, :type), do: t
-  defp privatize(t = %PropCheck.Derive.Type{}, :typep), do: %PropCheck.Derive.Type{t | private: true}
+
+  defp privatize(t = %PropCheck.Derive.Type{}, :typep),
+    do: %PropCheck.Derive.Type{t | private: true}
 
   defp detect_cycles!(forest) do
     case Server.find_cycle() do
