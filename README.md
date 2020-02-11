@@ -40,6 +40,10 @@ iex> is_binary(string)
 true
 ```
 
+## License
+
+`PropCheck.Derive` is licensed under GPL 3 [as is PropCheck](https://github.com/alfert/propcheck#license).
+
 ## Quality of the generators
 
 Please note that hand-written generators are likely to be better suited for non-trivial types.
